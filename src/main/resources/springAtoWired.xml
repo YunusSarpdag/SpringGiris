@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="beanPersonel" class="com.springautowired.Personel" autowire="byName">
+        <property name="nm" value="Yunus"></property>
+        <property name="sureName" value="Sarp"></property>
+       <!-- <property name="adress" ref="beanAdress"></property>  autowire byName do it for us -->
+    </bean>
+
+    <bean id="adress" class="com.springautowired.Adress">
+        <property name="fullAdress" value="Isparta/Turkey"></property>
+    </bean>
+
+
+
+</beans>

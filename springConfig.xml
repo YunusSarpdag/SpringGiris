@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="student" class="com.springPnameSpaceCnameSpace.Student" scope="singleton">
+        <property name="name" value="yunus"></property>
+        <property name="sureName" value="sarp"></property>
+        <property name="number" value="1"></property>
+    </bean> -->
+
+    <bean id = "school" class="com.springPnameSpaceCnameSpace.School"
+        p:schoolName="Dokuz Eylül">
+    </bean>
+    
+    <bean id = "lesson" class="com.springPnameSpaceCnameSpace.Lesson"
+            c:id="1"
+            c:name="Maht">
+    </bean>
+
+    <bean id="student" class="com.springPnameSpaceCnameSpace.Student" scope="singleton"
+          p:name ="yunus"
+          p:sureName ="sarp"
+          p:number ="1"
+          p:school-ref="school">
+    </bean>
+</beans>

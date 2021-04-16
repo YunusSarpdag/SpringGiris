@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="oil" class="com.springstart.Oil" scope="singleton"/>
+    <bean id ="car" class="com.springstart.Car" scope="singleton">
+        <constructor-arg ref="oil"/>
+        <property name="name" value="myCar"/>
+    </bean>
+    <bean id = "audi" class="com.springstart.Audi" parent="car">
+        <!-- name extending in car object -->
+        <property name="type" value="Audi"/>
+    </bean>
+
+    <bean id = "car1" class="com.springstart.Car1">
+        <constructor-arg ref="car"/>
+        <constructor-arg ref="audi"/>
+    </bean>
+
+    <!-- Need to case ConfigurableApplicationContext start stop-->
+    <bean id="startEvent" class="com.springstart.ContextEventStartListener"></bean>
+    <bean id="stopEvent" class="com.springstart.ContextEventStopListener"></bean>
+    
+    <context:component-scan base-package="com.componenet"></context:component-scan>
+</beans>

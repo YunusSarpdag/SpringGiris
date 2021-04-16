@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:annotation-config/>
+
+    <bean id="beanStudent" class="com.javaanatations.Student" >
+        <property name="name" value="yunus"></property>
+        <property name="sureName" value="sarp"></property>
+        <property name="age" value="22"></property>
+    </bean>
+
+    <bean id="beanStudent1" class="com.javaanatations.Student" >
+        <property name="name" value="ahmet"></property>
+        <property name="sureName" value="sarp"></property>
+        <property name="age" value="55"></property>
+    </bean>
+
+    <bean id="beanStudent2" class="com.javaanatations.Student" >
+        <property name="name" value="emre"></property>
+        <property name="sureName" value="sarp"></property>
+        <property name="age" value="18"></property>
+    </bean>
+
+    <bean id="beanLesson" class="com.javaanatations.Lesson">
+        <property name="nm" value="yunus"></property>
+        <property name="id" value="1"></property>
+     <!--   <property name="student" ref="beanStudent"></property> qualifier did it for us -->
+    </bean>
+</beans>
